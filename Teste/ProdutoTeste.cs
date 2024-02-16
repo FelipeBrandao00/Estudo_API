@@ -1,5 +1,6 @@
 using API_Produtos.Interface;
 using API_Produtos.Models;
+using API_Produtos.Repository;
 using API_Produtos.Service;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ namespace Teste
     {
         private DatabaseContext _dbContext;
         private IProdutoService _produtoService;
+        private IProdutoRepository _produtoRepository;
         public TestContext TestContext { get; set; }
 
 
@@ -23,7 +25,8 @@ namespace Teste
                 .Options;
 
             _dbContext = new DatabaseContext(options);
-            _produtoService = new ProdutoService(_dbContext);
+            _produtoRepository = new ProdutoRepository(_dbContext);
+            _produtoService = new ProdutoService(_produtoRepository);
         }
 
         [TestMethod]
