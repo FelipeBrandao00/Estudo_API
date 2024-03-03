@@ -1,5 +1,6 @@
 using API_Produtos.Interface;
 using API_Produtos.Models;
+using API_Produtos.Models.Produto;
 using API_Produtos.Repository;
 using API_Produtos.Service;
 using Microsoft.EntityFrameworkCore;

@@ -11,5 +11,6 @@ namespace API_Produtos.Models
         }
         public DatabaseContext(DbContextOptions options) : base(options) { }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
